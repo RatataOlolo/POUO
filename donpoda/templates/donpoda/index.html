@@ -1,0 +1,181 @@
+{% extends 'donpoda/base.html' %}
+{% load static %}
+{% load donpoda_tags %}
+{% block content %}
+<section class="hero-section">
+    <div class="hero-items owl-carousel">
+        <div class="single-hero-item set-bg" data-setbg="{% static 'donpoda/img/hero-slider/hero-1.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hero-text">
+                            <h1>
+                                Департамент освіти і науки
+                            </h1>
+                            <h2>Полтавської обласної військової адміністрації</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-hero-item set-bg" data-setbg="{% static 'donpoda/img/hero-slider/hero-2.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hero-text">
+                            <h1>Департамент освіти і науки</h1>
+                            <h2>Полтавської обласної військової адміністрації</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single-hero-item set-bg" data-setbg="{% static 'donpoda/img/hero-slider/hero-3.jpg' %}">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hero-text">
+                            <h1>Департамент освіти і науки</h1>
+                            <h2>Полтавської обласної військової адміністрації</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="chooseus-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 color-change-dark">
+                <a href="#">
+                    <div class="choose-item fadeInLeft">
+                        <i class="fa-solid fa-hand-sparkles"></i>
+                        <h5>Очищення влади</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 color-change-dark">
+                <a href="#">
+                    <div class="choose-item fadeInLeft">
+                        <i class="fa-solid fa-file"></i>
+                        <h5>Ліцензування</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 color-change-dark">
+                <a href="#">
+                    <div class="choose-item fadeInRight">
+                        <i class="fa-solid fa-folder-open"></i>
+                        <h5>Спецперевірка документів</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 color-change-dark">
+                <a href="#">
+                    <div class="choose-item fadeInRight">
+                        <i class="fa-solid fa-sack-xmark"></i>
+                        <h5>Запобігання проявам корупції</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 color-change-dark">
+                <a href="#">
+                    <div class="choose-item fadeInLeft">
+                        <i class="fa-solid fa-person-chalkboard"></i>
+                        <h5>Виховна робота</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 color-change-dark">
+                <a href="#">
+                    <div class="choose-item fadeInLeft">
+                        <i class="fa-solid fa-people-group"></i>
+                        <h5>Громадське обговорення</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 color-change-dark">
+                <a href="#">
+                    <div class="choose-item fadeInRight">
+                        <i class="fa-solid fa-coins"></i>
+                        <h5>Державні закупівлі</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-3 col-sm-6 color-change-dark">
+                <a href="#">
+                    <div class="choose-item fadeInRight">
+                        <i class="fa-solid fa-people-line"></i>
+                        <h5>Зв'язки з громадськістю</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="blog-section blog-page spad">
+    <div class="container">
+        <div class="row blog-grid">
+            {% for post in posts %}
+            <div class="col-lg-4 col-md-6 grid-item">
+                {% if post.photo %}
+                <div class="blog-item large-item set-bg" data-setbg="{{post.photo.url}}">
+                    {% endif %}
+                    <a href="{{post.get_absolute_url}}" class="blog-text">
+                        <div class="categories">{{post.cat}}</div>
+                        <h5>{{post.title}}</h5>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="blog-option">
+            {% if page_obj.has_other_pages %}
+            <div class="blog-pagination">
+                {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
+                {% endif %}
+                {% for page in page_obj.paginator.page_range %}
+                {% if page_obj.number == page %}
+                <a class="active">{{ page }}</a>
+                {% elif page >= page_obj.number|add:-2 and page <= page_obj.number|add:2 %}
+                <a href="?page={{page}}">{{ page }}</a>
+                {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}"><i class="fa fa-angle-right"></i></a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1726.3678895416058!2d34.55347611521394!3d49.58588321769411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d82f5f0760a7db%3A0x98f17a66a9a5cd05!2z0LLRg9C7LiDQndC10LHQtdGB0L3QvtGXINCh0L7RgtC90ZYsIDgvMjAsINCf0L7Qu9GC0LDQstCwLCDQn9C-0LvRgtCw0LLRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgMzYwMDA!5e0!3m2!1sru!2sua!4v1660421295257!5m2!1sru!2sua"
+            height="590" style="border: 0" allowfullscreen=""></iframe>
+
+    <div class="map-contact-detalis">
+        <div class="open-time">
+            <h6 style="margin-bottom: 10px">Департамент освіти і науки Полтавської обласної військової
+                адміністрації</h6>
+            <h5>Графік роботи</h5>
+            <ul>
+                <li>Пн. - Пт.: <span>08:00 - 17:00</span></li>
+                <li>Обідня перерва: <span>12:00 - 12:45</span></li>
+            </ul>
+        </div>
+        <div class="map-contact-form">
+            <h5>Контакти:</h5>
+            <ul>
+                <li>Адреса: <span>36000, м.Полтава, вул.Котляревського, 20/8</span></li>
+                <li>Телефон: <span>(0532) 56-51-07</span></li>
+                <li>E-mail: <span>obluo@adm-pl.gov.ua</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

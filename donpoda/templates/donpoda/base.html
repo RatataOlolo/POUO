@@ -1,0 +1,226 @@
+{% load static %}
+{% load donpoda_tags %}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Департамент освіти і науки Полтавської обласної військової адміністрації
+    </title>
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,600,700&display=swap" rel="stylesheet">
+    <!--    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">-->
+
+    <!-- Css Styles -->
+    <link type="text/css" rel="stylesheet" href="{% static 'donpoda/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'donpoda/css/font-awesome.min.css' %}"/>
+
+    <link rel="stylesheet" href="{% static 'donpoda/css/elegant-icons.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'donpoda/css/nice-select.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'donpoda/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'donpoda/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'donpoda/css/slicknav.min.css' %}" type="text/css">
+
+    <!-- Font Awesome Icon -->
+    <script src="https://kit.fontawesome.com/4dffe4967e.js" crossorigin="anonymous"></script>
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" href="{% static 'donpoda/css/style.css' %}" rel="stylesheet"/>
+    <link rel="shortcut icon" href="{% static 'donpoda/img/favicon.ico' %}" type="image/x-icon"/>
+</head>
+<body>
+<div id="preloder">
+    <div class="loader"></div>
+</div>
+<header class="header-section">
+    <div class="container-fluid">
+        <div class="top-social">
+            <a href="https://www.facebook.com/poltavadon"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+        <div class="col-lg-11 menu-all-screen">
+            <div class="nav-menu">
+                <nav class="mainmenu mobile-menu">
+                    <ul style="margin-bottom: 2rem">
+                        <li><a href="{% url 'home' %}">Головна</a></li>
+                        <li><a href="#">Департамент<i
+                                class="fa-solid fa-angle-right rotate"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Керівний склад</a></li>
+                                <li><a href="#">Структура</a></li>
+                                <li><a href="#">Положення про Департамент освіти і науки</a></li>
+                                <li><a href="#">Плани роботи</a></li>
+                                <li><a href="#">Рішення колегій</a></li>
+                                <li><a href="#">Вакансії</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./blog.html">Заклади та установи освіти<i
+                                class="fa-solid fa-angle-right rotate"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Відділи освіти у Полтавській області</a></li>
+                                <li><a href="#">Заклади вищої освіти</a></li>
+                                <li><a href="#">Професійні (професійно-технічні) заклади</a></li>
+                                <li><a href="#">Заклади загальної середньої освіти обласного підпорядкування</a></li>
+                                <li><a href="#">Заклади позашкільної освіти</a></li>
+                                <li><a href="#">Організація харчування</a></li>
+                                <li><a href="#">Комунальні установи</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Інклюзивна освіта<i class="fa-solid fa-angle-right rotate"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Новини</a></li>
+                                <li><a href="#">На допомогу батькам</a></li>
+                                <li><a href="#">Ресурсна кімната та медіатека</a></li>
+                                <li><a href="#">ІРЦ</a></li>
+                                <li><a href="#">Нормативно-правова база</a></li>
+                                <li><a href="#">Ініціативи для молоді</a></li>
+                                <li><a href="#">Молодіжне підприємництво</a></li>
+                                <li><a href="#">Національно-патріотичне виховання</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Освіта<i class="fa-solid fa-angle-right rotate"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Вища</a></li>
+                                <li><a href="#">Професійна (професійно-технічна)</a></li>
+                                <li><a href="#">Загальна середня</a></li>
+                                <li><a href="#">Дошкільна</a></li>
+                                <li><a href="#">Спеціальна</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Обласні програми<i class="fa-solid fa-angle-right rotate"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Діючі обласні програми</a></li>
+                                <li><a href="#">Виконання обласних програм</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./blog.html">Оздоровлення та відпочинок<i
+                                class="fa-solid fa-angle-right rotate"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Мережа ДЗОВ</a></li>
+                                <li><a href="#">Нормативно-правова база з питань оздоровлення</a></li>
+                                <li><a href="#">Літо на Полтавщині</a></li>
+                                <li><a href="#">Підпорядковані заклади оздоровлення і відпочинку</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="./blog.html">Зв'язки з громадськістю<i class="fa-solid fa-angle-right rotate"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="#">Проведені заходи за участю громадськості</a></li>
+                                <li><a href="#">Рекомендації конференцій, колегій, нарад</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+</header>
+{% block content %}
+{% endblock %}
+<section class="cta-section">
+    <div class="container">
+        <div class="row" style="text-align: center;">
+            <div class="col-lg-12 useful-links-row">
+                <h5 style="color: white; padding-bottom: 1rem">Корисні посилання</h5>
+            </div>
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+                <div id="carousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="https://www.facebook.com/poltavadon"><img class="img-fluid" src="{% static '/donpoda/img/facebook.png' %}" style="margin: 5px 5px"></img></a>
+                            <a href="https://www.rada.gov.ua/"><img src="{% static '/donpoda/img/rada.png' %}" style="margin: 5px 5px"></img></a>
+                            <a href="https://www.president.gov.ua/"><img class="img-fluid" src="{% static '/donpoda/img/president.png' %}" style="margin: 5px 5px"></img></a>
+                            <a href="https://mon.gov.ua/ua"><img class="img-fluid"
+                                                                 src="{% static '/donpoda/img/mon.png' %}"
+                                                                 style="margin: 5px 5px"></img></a>
+                            <a href="https://sqe.gov.ua/"><img class="img-fluid"
+                                                               src="{% static '/donpoda/img/SQE_logo.jpg' %}"
+                                                               style="margin: 5px 5px"></img></a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="https://www.adm-pl.gov.ua/"><img class="img-fluid"
+                                                                      src="{% static '/donpoda/img/poda.png' %}"
+                                                                      style="margin: 5px 5px"></img></a>
+                            <a href="https://ukc.gov.ua/"><img class="img-fluid"
+                                                               src="{% static '/donpoda/img/1545.jpg' %}"
+                                                               style="margin: 5px 5px"></img></a>
+                            <a href="http://pedpresa.com.ua/"><img class="img-fluid"
+                                                                   src="{% static '/donpoda/img/pedpresa.png' %}"
+                                                                   style="margin: 5px 5px"></img></a>
+                            <a href="https://osvita.diia.gov.ua/courses/serial-dlya-batkiv-onlayn-bezpeka-ditey"><img class="img-fluid"
+                                                                   src="{% static '/donpoda/img/diya.png' %}"
+                                                                   style="margin: 5px 5px"></img></a>
+                            <a href="https://mon.gov.ua/ua/osvita/pozashkilna-osvita/vihovna-robota-ta-zahist-prav-ditini/bezpeka-ditej-v-interneti"><img class="img-fluid"
+                                                                   src="{% static '/donpoda/img/bezpeka.png' %}"
+                                                                   style="margin: 5px 5px"></img></a>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Попередній</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Наступний</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer-logo-item">
+                    <div class="social-links">
+                        <h6>Департамент освіти і науки Полтавської обласної військової
+                            адміністрації</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="footer-logo-item">
+                    <i class="fa fa-phone"></i><span> Телефон: (0532) 60-91-79</span>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="footer-logo-item">
+                    <i class="fa-solid fa-location-dot"></i><span> Адреса: 36000, м.Полтава, вул.Котляревського, 20/8</span>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="footer-logo-item">
+                    <i class="fa fa-envelope-o"></i><span> Email: obluo@adm-pl.gov.ua</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="copyright-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="ct-inside">
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                        All rights reserved
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="{% static 'donpoda/js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'donpoda/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'donpoda/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'donpoda/js/mixitup.min.js' %}"></script>
+<script src="{% static 'donpoda/js/jquery.nice-select.min.js' %}"></script>
+<script src="{% static 'donpoda/js/jquery.slicknav.js' %}"></script>
+<script src="{% static 'donpoda/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'donpoda/js/masonry.pkgd.min.js' %}"></script>
+<script src="{% static 'donpoda/js/main.js' %}"></script>
+</body>
+
+

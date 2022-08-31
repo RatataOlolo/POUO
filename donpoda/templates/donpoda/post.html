@@ -1,0 +1,87 @@
+{% extends 'donpoda/base.html' %}
+{% load donpoda_tags %}
+{% load static %}
+{% block content %}
+<section class="blog-single-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-7 m-auto text-center">
+                <div class="bs-hero-text">
+                    <h4>{{title}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="blog-single-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="blog-single-text">
+                    <div class="blog-text">
+                        <h4>{{post.title}}</h4>
+                        <img src="{{post.photo.url}}" class="img-thumbnail" alt="">
+                        <hr>
+                        {% autoescape off %}
+                        {{post.text}}
+                        {% endautoescape %}
+                    </div>
+                    <div class="blog-pic blabla">
+                        <section class="gallery-section spad">
+                            <div class="container">
+                                <div class="row gallery-filter">
+                                    {% for photo in photos %}
+                                    {% if photo.post == post %}
+                                    <div class="col-lg-4 col-sm-6 mix crossfit workout">
+                                        <div class="gallery-item">
+                                            <img src="{{photo.photo.url}}" alt="">
+                                            <div class="gi-hover-warp">
+                                                <div class="gi-hover">
+                                                    <a href="{{photo.photo.url}}" class="image-popup"><i
+                                                            class="fa fa-search-plus"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog-single-sidebar">
+                    <div class="bs-latest-news">
+                        <h4>Останні новини</h4>
+                        {% for news in newsposts %}
+                        {% if news.photo %}
+                        <a href="{{news.get_absolute_url}}" class="bl-item set-bg" data-setbg="{{news.photo.url}}">
+                            <h5>{{news.title}}</h5>
+                            <span>{{news.time_create}}</span>
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="bs-latest-news">
+                        <a href="{{post.cat.get_absolute_url}}"><h4>Новини з даної категорії</h4></a>
+                        {% for news in catposts %}
+                        {% if news.cat == post.cat %}
+                        {% if news != post %}
+                        {% if news.photo %}
+                        <a href="{{news.get_absolute_url}}" class="bl-item set-bg" data-setbg="{{news.photo.url}}">
+                            <h5>{{news.title}}</h5>
+                            <span>{{news.cat}}</span>
+                        </a>
+                        {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
